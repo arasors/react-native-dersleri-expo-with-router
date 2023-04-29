@@ -25,7 +25,8 @@ export default function HomeLayout() {
                          options={
                                 {
                                     title: "Feed",
-                                    tabBarIcon: ({color, size}) => <MaterialIcons name="rss-feed" size={size} color={color}/>
+                                    tabBarIcon: ({color, size}) => <MaterialIcons name="rss-feed" size={size} color={color}/>,
+                                    headerShown: false
                                 }
             }
             />
