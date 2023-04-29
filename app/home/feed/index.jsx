@@ -1,6 +1,7 @@
 import {View, Text, TouchableOpacity, ImageBackground} from "react-native";
 import {Stack} from "expo-router";
 import {useState} from "react";
+import {useAuth} from "../../../context/auth";
 
 
 const Logo = () => {
@@ -19,6 +20,7 @@ const Logo = () => {
 
 export default function Index() {
     const [counter, setCounter] = useState(0);
+    const { signOut } = useAuth();
 
     return (
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -34,6 +36,7 @@ export default function Index() {
             <Text style={{fontSize: 60}}>Feed</Text>
             <Text style={{fontSize: 25}}>{counter}</Text>
 
+            <Text onPress={() => signOut()}>Sign Out</Text>
         </View>
     );
 }
